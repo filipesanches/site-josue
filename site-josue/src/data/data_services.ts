@@ -63,11 +63,11 @@ export const servicesData = [
   {
     name: 'PAINTING',
     text: `commercial painting crews work hand-in-hand with our drywall finishing team to ensure exterior and interior walls are finished to perfection every time. Our team has decades of experience in the painting field and takes extreme pride in providing the quality of work that you deserve.`,
-    images: [
-      ImgPainting1,
-      ImgPainting2,
-      ImgPainting3,
-      ImgPainting4,
-    ]
+    images: [ImgPainting1, ImgPainting2, ImgPainting3, ImgPainting4],
+  },
+  {
+    name: 'CABINETRY',
+    text: `Elite Contracting is an experienced provider and installer of imported cabinets for projects ranging from a small office building breakroom to a large multifamily ground-up construction. We can provide you with a quote for supplying your new cabinets along with installation by our experienced, detail-oriented team.`,
+    images: []
   },
 ];
