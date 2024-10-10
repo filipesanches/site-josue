@@ -168,38 +168,32 @@ export const dataProjects = [
       {
         primary: 'Scope:',
         secondary:
-          ' Drywall, Painting, Cabinetry, Vanity and Countertop Installation and Deconstruction',
+          'Drywall, Painting, Cabinetry, Vanity and Countertop Installation and Deconstruction',
       },
     ],
   },
   {
     images: [
-      ImgRevivalProject1,
-      ImgRevivalProject2,
-      ImgRevivalProject3,
-      ImgRevivalProject4,
-      ImgRevivalProject5,
-      ImgRevivalProject6,
+      
     ],
-    textTitle: 'Revival Hotel Baltimore',
-    textDescription: 'Baltimore, MD',
+    textTitle: 'Washington Suburban Sanitary Commission Cafeteria',
+    textDescription: 'Laurel, MD',
     textList: [
       {
         primary: 'Client:',
-        secondary: 'Hotel Revival Group',
+        secondary: 'WSSC',
       },
       {
         primary: 'Project:',
-        secondary: 'Kitchen, Bathroom, Meeting Room, Lobby and Restaurant Bar',
+        secondary: 'Cafeteria Upgrade',
       },
       {
         primary: 'Project Location:',
-        secondary: 'Baltimore, MD.',
+        secondary: 'Laurel, MD.',
       },
       {
         primary: 'Scope:',
-        secondary:
-          ' Drywall, Painting, Cabinetry, Vanity and Countertop Installation and Deconstruction',
+        secondary: 'Ceramic Tile, ACT, Decorative Art Work, Painting',
       },
     ],
   },
