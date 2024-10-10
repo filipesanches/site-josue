@@ -7,6 +7,8 @@ import About from './components/Pages/About';
 import Box from '@mui/material/Box';
 import Phone_btn from './components/Phone_btn';
 import Projects from './components/Pages/Projects';
+import Subcontractor from './components/Pages/Subcontractor';
+import Contact from './components/Pages/Contact';
 
 const App = () => {
   return (
@@ -17,9 +19,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/projects" element={<Projects/>} />
-          <Route path="/subcontractors" element={<>sdsdsd</>} />
-          <Route path="/contact" element={<>sdsdsd</>} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/subcontractors" element={<Subcontractor />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Box>
       <Phone_btn />
