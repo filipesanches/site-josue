@@ -10,6 +10,12 @@ import ImgCarolinaProject1 from '../assets/cards_projects/carolina/c1.png';
 import ImgCarolinaProject2 from '../assets/cards_projects/carolina/c2.png';
 import ImgCarolinaProject3 from '../assets/cards_projects/carolina/c3.png';
 import ImgCarolinaProject4 from '../assets/cards_projects/carolina/c4.png';
+import ImgOceanPalaceProject1 from '../assets/cards_projects/ocean_place/oc1.png';
+import ImgOceanPalaceProject2 from '../assets/cards_projects/ocean_place/oc2.png';
+import ImgOceanPalaceProject3 from '../assets/cards_projects/ocean_place/oc3.png';
+import ImgOceanPalaceProject4 from '../assets/cards_projects/ocean_place/oc4.png';
+import ImgOceanPalaceProject5 from '../assets/cards_projects/ocean_place/oc4.png';
+
 
 export const dataProjects = [
   {
@@ -72,7 +78,6 @@ export const dataProjects = [
       },
     ],
   },
-
   {
     images: [
       ImgCarolinaProject1,
@@ -103,29 +108,30 @@ export const dataProjects = [
   },
   {
     images: [
-      ImgAmazonProject1,
-      ImgAmazonProject2,
-      ImgAmazonProject3,
-      ImgAmazonProject4,
+      ImgOceanPalaceProject1,
+      ImgOceanPalaceProject2,
+      ImgOceanPalaceProject3,
+      ImgOceanPalaceProject4,
+      ImgOceanPalaceProject5,
     ],
-    textTitle: 'Shepherdstown Library',
-    textDescription: 'Shepherdstown, WV',
+    textTitle: 'OCEAN PLACE – HOTEL',
+    textDescription: 'Long Branch, NJ',
     textList: [
       {
         primary: 'Client:',
-        secondary: 'Amazon',
+        secondary: 'Ocean Place',
       },
       {
         primary: 'Project:',
-        secondary: 'Office and Restroom Construction',
-      },
-      {
-        primary: 'Contractor:',
-        secondary: 'Conewago Enterprises',
+        secondary: 'Kitchen and Bathroom Remodel',
       },
       {
         primary: 'Project Location:',
-        secondary: 'North East, MD',
+        secondary: 'Long Branch, NJ',
+      },
+      {
+        primary: 'Scope:',
+        secondary: ' Ceramic Tile, ACT, Decorative Art Work, Painting',
       },
     ],
   },

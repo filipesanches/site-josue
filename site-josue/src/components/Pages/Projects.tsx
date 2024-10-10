@@ -125,15 +125,6 @@ const Projects = () => {
             textList={project.textList}
           />
         ))}
-        {dataProjects.map((project, index) => (
-          <BoxProjects
-            key={index}
-            images={project.images}
-            textTitle={project.textTitle}
-            textDescription={project.textDescription}
-            textList={project.textList}
-          />
-        ))}
       </Box>
     </>
   );
