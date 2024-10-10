@@ -129,8 +129,8 @@ const Home = () => {
       >
         <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
           <Box
-            component={'a'}
-            href="tel:+12407584966"
+            component={Link}
+            to="tel:+12407584966"
             sx={{ textDecoration: 'none', color: 'inherit' }}
           >
             CALL TO US +1 (240) 758-4966

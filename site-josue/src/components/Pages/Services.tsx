@@ -14,6 +14,7 @@ const ServiceCard = React.forwardRef(({ name , text, images, bgColor }:{name: st
       id={name.toLowerCase().replace(/\s+/g, '')}
       component={'div'}
       sx={{
+        scrollMarginTop: '160px', // Ajuste a altura do seu menu fixo
         backgroundColor: bgColor ? '#f7f7f7' : 'white',
         display: 'flex',
         alignItems: 'center',
