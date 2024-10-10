@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import BgTitle from '../../assets/pagination/bg_titulos_pages.png';
+import BgTitle from '../assets/pagination/bg_titulos_pages.png';
 import { Link } from 'react-router-dom';
 
 function Pagination({ text }: { text: string }) {

@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Pagination from './Pagination';
+import Pagination from '../Pagination';
 import BgImage from '../../assets/bg_home_2_color.png';
 const About = () => {
   return (
