@@ -15,6 +15,12 @@ import ImgOceanPalaceProject2 from '../assets/cards_projects/ocean_place/oc2.png
 import ImgOceanPalaceProject3 from '../assets/cards_projects/ocean_place/oc3.png';
 import ImgOceanPalaceProject4 from '../assets/cards_projects/ocean_place/oc4.png';
 import ImgOceanPalaceProject5 from '../assets/cards_projects/ocean_place/oc4.png';
+import ImgRevivalProject1 from '../assets/cards_projects/revival/r1.png';
+import ImgRevivalProject2 from '../assets/cards_projects/revival/r2.png';
+import ImgRevivalProject3 from '../assets/cards_projects/revival/r3.png';
+import ImgRevivalProject4 from '../assets/cards_projects/revival/r4.png';
+import ImgRevivalProject5 from '../assets/cards_projects/revival/r5.png';
+import ImgRevivalProject6 from '../assets/cards_projects/revival/r6.png';
 
 
 export const dataProjects = [
@@ -132,6 +138,68 @@ export const dataProjects = [
       {
         primary: 'Scope:',
         secondary: ' Ceramic Tile, ACT, Decorative Art Work, Painting',
+      },
+    ],
+  },
+  {
+    images: [
+      ImgRevivalProject1,
+      ImgRevivalProject2,
+      ImgRevivalProject3,
+      ImgRevivalProject4,
+      ImgRevivalProject5,
+      ImgRevivalProject6,
+    ],
+    textTitle: 'Revival Hotel Baltimore',
+    textDescription: 'Baltimore, MD',
+    textList: [
+      {
+        primary: 'Client:',
+        secondary: 'Hotel Revival Group',
+      },
+      {
+        primary: 'Project:',
+        secondary: 'Kitchen, Bathroom, Meeting Room, Lobby and Restaurant Bar',
+      },
+      {
+        primary: 'Project Location:',
+        secondary: 'Baltimore, MD.',
+      },
+      {
+        primary: 'Scope:',
+        secondary:
+          ' Drywall, Painting, Cabinetry, Vanity and Countertop Installation and Deconstruction',
+      },
+    ],
+  },
+  {
+    images: [
+      ImgRevivalProject1,
+      ImgRevivalProject2,
+      ImgRevivalProject3,
+      ImgRevivalProject4,
+      ImgRevivalProject5,
+      ImgRevivalProject6,
+    ],
+    textTitle: 'Revival Hotel Baltimore',
+    textDescription: 'Baltimore, MD',
+    textList: [
+      {
+        primary: 'Client:',
+        secondary: 'Hotel Revival Group',
+      },
+      {
+        primary: 'Project:',
+        secondary: 'Kitchen, Bathroom, Meeting Room, Lobby and Restaurant Bar',
+      },
+      {
+        primary: 'Project Location:',
+        secondary: 'Baltimore, MD.',
+      },
+      {
+        primary: 'Scope:',
+        secondary:
+          ' Drywall, Painting, Cabinetry, Vanity and Countertop Installation and Deconstruction',
       },
     ],
   },
