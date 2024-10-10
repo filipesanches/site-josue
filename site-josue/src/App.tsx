@@ -3,22 +3,25 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Pages/Home';
 import Services from './components/Pages/Services';
+import About from './components/Pages/About';
 import Box from '@mui/material/Box';
+import Phone_btn from './components/Phone_btn';
 
 const App = () => {
   return (
     <Router>
       <Navbar />
-      <Box sx={{ padding: { lg: '0 50px' } }}>
+      <Box sx={{ padding: { lg: '0 50px' }, marginTop: '200px' }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<>sdsdsds</>} />
+          <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<>sdsdsdsd</>} />
           <Route path="/subcontractors" element={<>sdsdsd</>} />
           <Route path="/contact" element={<>sdsdsd</>} />
         </Routes>
       </Box>
+      <Phone_btn />
       <Footer />
     </Router>
   );

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import Carousel from '../Carousel';
 import { servicesData } from '../../data/data_services';
+import Pagination from './Pagination';
 
 
 
@@ -22,8 +23,7 @@ const ServiceCard = React.forwardRef(({ name , text, images, bgColor }:{name: st
           md: 'column nowrap',
           lg: 'row nowrap',
         },
-        padding: '20px',
-        margin: '20px 0',
+        padding: '30px 0',
       }}
     >
       <Box sx={{ padding: { xs: '0', md: '0 50px 0 0' }, maxWidth: '400px' }}>
@@ -87,6 +87,7 @@ const Services = () => {
 
   return (
     <>
+      <Pagination text="SERVICES" />
       {servicesData.map((service, index) => (
         <ServiceCard
           key={index}

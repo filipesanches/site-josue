@@ -67,7 +67,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: "#fff" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "#fff" }}>
         <Toolbar>
           <Link to="/">
             <Box
@@ -75,6 +75,8 @@ const Navbar = () => {
               src={Logo}
               alt="Logo"
               sx={{
+                transition: "all 0.3s ease",
+                "&:hover": { transform: "scale(1.1)" },
                 width: { xs: "100px", sm: "130px", md: "150px" },
                 height: "auto",
                 display: "block",

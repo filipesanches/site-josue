@@ -21,6 +21,14 @@ import ImgPainting1 from '../assets/cards_services/painting/Painting-1-1.png';
 import ImgPainting2 from '../assets/cards_services/painting/Painting-2-1.png';
 import ImgPainting3 from '../assets/cards_services/painting/Painting-3-1.png';
 import ImgPainting4 from '../assets/cards_services/painting/Painting-4-1.png';
+import ImgFlooring1 from '../assets/cards_services/flooring/Flooring-1-1.png';
+import ImgFlooring2 from '../assets/cards_services/flooring/Flooring-2-1.png';
+import ImgFlooring3 from '../assets/cards_services/flooring/Flooring-3-1.png';
+import ImgFlooring4 from '../assets/cards_services/flooring/Flooring-4-1.png';
+import ImgCabinetry1 from '../assets/cards_services/cabinetry/Cabinetry-1-1.png';
+import ImgCabinetry2 from '../assets/cards_services/cabinetry/Cabinetry-2-1.png';
+import ImgCabinetry3 from '../assets/cards_services/cabinetry/Cabinetry-3-1.png';
+import ImgCabinetry4 from '../assets/cards_services/cabinetry/Cabinetry-4-1.png';
 
 export const servicesData = [
   {
@@ -66,8 +74,13 @@ export const servicesData = [
     images: [ImgPainting1, ImgPainting2, ImgPainting3, ImgPainting4],
   },
   {
+    name: 'FLOORING',
+    text: `We are experienced in completing a vast variety of projects ranging from ceramic floor and wall tile to large-scale, commercial luxury vinyl tile projects. Our team has the expertise to provide a finish to your flooring projects with any specified base, including both rubber and wood trims.`,
+    images: [ImgFlooring1, ImgFlooring2, ImgFlooring3, ImgFlooring4],
+  },
+  {
     name: 'CABINETRY',
     text: `Elite Contracting is an experienced provider and installer of imported cabinets for projects ranging from a small office building breakroom to a large multifamily ground-up construction. We can provide you with a quote for supplying your new cabinets along with installation by our experienced, detail-oriented team.`,
-    images: []
+    images: [ImgCabinetry1, ImgCabinetry2, ImgCabinetry3, ImgCabinetry4],
   },
 ];
