@@ -8,6 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
 import { Link } from 'react-router-dom';
 import BoxContent from '../BoxContent';
+import IframeForm from '../IframeForm';
 
 const CardContact = ({
   title,
@@ -116,7 +117,12 @@ const Contact = () => {
           text="info@elitecontracting-llc.com"
         />
       </BoxContent>
-      <Box sx={{ padding: '50px', width: '100%' }}></Box>
+      <Box sx={{ padding: '50px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <IframeForm 
+          height="1500px"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdtqWGxFC8xbOrlEM-ovQJlFoP1jhzvvf_EoFAhWCeCvd1Nqw/viewform?usp=sf_link"
+        />
+      </Box>
     </>
   );
 };
