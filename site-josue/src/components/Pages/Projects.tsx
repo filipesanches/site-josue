@@ -1,48 +1,90 @@
-import { Box, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+} from '@mui/material';
 import Pagination from '../Pagination';
 import Carousel from '../Carousel';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { dataProjects } from '../../data/data_projects';
 
-
-const DynamicList = ({ items }) => {
+const DynamicList = ({
+  items,
+}: {
+  items: { primary: string; secondary: string }[];
+}) => {
   return (
-    <List component="ol" disablePadding>
+    <List component="ol" disablePadding sx={{ textAlign: 'center' }}>
       {items.map((item, index) => (
         <ListItem key={index} component="li" disablePadding>
-          <ListItemIcon sx={{ minWidth: '30px' }}>
+          <ListItemIcon sx={{ minWidth: '20px', color: '#e4e4e4' }}>
             <FiberManualRecordIcon fontSize="inherit" />
           </ListItemIcon>
-          <ListItemText primary={item.primary} />
+          <ListItemText
+            primary={
+              <Box>
+                <Box
+                  component="span"
+                  sx={{
+                    fontWeight: 'bold',
+                    fontSize: '16px',
+                    color: 'gray',
+                  }}
+                >
+                  {item.primary}
+                </Box>{' '}
+                <Box component="span" sx={{ fontSize: '14px' }}>
+                  {item.secondary}
+                </Box>
+              </Box>
+            }
+          />
         </ListItem>
       ))}
     </List>
   );
 };
 
-const BoxProjects = ({ images }: { images: string[] }) => {
+const BoxProjects = ({
+  images,
+  textTitle,
+  textDescription,
+  textList,
+}: {
+  images: string[];
+  textTitle: string;
+  textDescription: string;
+  textList: { primary: string; secondary: string }[];
+}) => {
   return (
     <Box
       component="div"
       sx={{
+        alignItems: 'center',
+        margin: '50px 0',
         display: 'flex',
-        flexFlow: { xs: 'column nowrap', lg: 'row nowrap' },
+        flexDirection: { xs: 'column', lg: 'row' },
+
       }}
     >
-      <Box sx={{ marginRight: { md: 0, lg: '60px' } }}>
+      <Box sx={{ marginRight: { md: 0, lg: '60px' }}}>
         <Carousel images={images} />
       </Box>
-      <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
+      <Box sx={{ textAlign: { xs: 'center', lg: 'left' }, width: { xs: '100%', lg: '500px' }, padding: '20px' }}>
         <Typography variant="h5" component="div">
-          Amazon Fulfillment Office and Restroom
+          {textTitle}
         </Typography>
         <Typography
-          variant="body1"
+          variant="h6"
           component="div"
           sx={{
             color: 'gray',
             position: 'relative',
-            marginBottom: '30px',
-            paddingBottom: '20px',
+            marginBottom: '20px',
+            paddingBottom: '10px',
             textAlign: { xs: 'center', lg: 'left' },
             '::after': {
               content: '""',
@@ -55,16 +97,9 @@ const BoxProjects = ({ images }: { images: string[] }) => {
             },
           }}
         >
-          {' '}
-          Twsad
+          {textDescription}
         </Typography>
-        <DynamicList
-          items={[
-            { primary: 'Project Name', secondary: 'Project Name' },
-            { primary: 'Project Name', secondary: 'Project Name' },
-            { primary: 'Project Name', secondary: 'Project Name' },
-          ]}
-        />
+        <DynamicList items={textList} />
       </Box>
     </Box>
   );
@@ -81,7 +116,24 @@ const Projects = () => {
           alignItems: 'center',
         }}
       >
-        <BoxProjects images={[]} />
+        {dataProjects.map((project, index) => (
+          <BoxProjects
+            key={index}
+            images={project.images}
+            textTitle={project.textTitle}
+            textDescription={project.textDescription}
+            textList={project.textList}
+          />
+        ))}
+        {dataProjects.map((project, index) => (
+          <BoxProjects
+            key={index}
+            images={project.images}
+            textTitle={project.textTitle}
+            textDescription={project.textDescription}
+            textList={project.textList}
+          />
+        ))}
       </Box>
     </>
   );

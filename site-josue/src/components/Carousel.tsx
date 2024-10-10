@@ -17,7 +17,7 @@ const Carousel = ({ images }: { images: string[] }) => {
   }, []);
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
       {images[activeStep] && (
         <Box
           component="img"
