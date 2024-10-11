@@ -9,7 +9,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Logo from "../assets/logo-OK.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
@@ -26,6 +26,7 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -65,9 +66,28 @@ const Navbar = () => {
     </Box>
   );
 
+  // Adicionando o efeito de rolagem para alterar o estado da barra de navegação
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 100;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <AppBar position="fixed" sx={{ backgroundColor: "#fff" }}>
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: "#fff",
+          transition: "all 0.3s ease",
+        }}
+      >
         <Toolbar>
           <Link to="/">
             <Box
@@ -77,7 +97,7 @@ const Navbar = () => {
               sx={{
                 transition: "all 0.3s ease",
                 "&:hover": { transform: "scale(1.1)" },
-                width: { xs: "100px", sm: "130px", md: "150px" },
+                width: { xs: "70px", sm: scrolled ? "90px" : "100px", md: scrolled ? "100px" : "120px" },
                 height: "auto",
                 display: "block",
                 margin: "10px",
