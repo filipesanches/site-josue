@@ -7,6 +7,7 @@ function Pagination({ text }: { text: string }) {
     <Box
       component="div"
       sx={{
+        overflow: 'hidden',
         width: '100%',
         height: '250px',
         backgroundImage: `url(${BgTitle})`,
@@ -18,7 +19,7 @@ function Pagination({ text }: { text: string }) {
         flexFlow: 'column nowrap',
       }}
     >
-      <Typography component={'div'} variant="h3" sx={{ fontWeight: 'bold' }}>
+      <Typography component={'div'} variant="h3" sx={{ fontWeight: 'bold', fontSize: {xs: '30px', sm: '60px'} }}>
         {text}
       </Typography>
       <Typography

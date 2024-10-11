@@ -9,7 +9,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Logo from "../assets/logo-OK.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
@@ -27,6 +27,7 @@ const Navbar = () => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const scrollRef = useRef(window);
 
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -40,42 +41,49 @@ const Navbar = () => {
       setDrawerOpen(open);
     };
 
-  const drawerContent = (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {navItems.map((item) => (
-          <ListItem
-            component={Link}
-            to={item.path}
-            sx={{
-              color: isActive(item.path) ? "primary.main" : "GrayText",
-              fontWeight: isActive(item.path) ? "bold" : "normal",
-            }}
-            key={item.label}
-            onClick={() => console.log(`${item.label} clicado`)}
-          >
-            <ListItemText primary={item.label} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+  const drawerContent = useMemo(
+    () => (
+      <Box
+        sx={{ width: 250 }}
+        role="presentation"
+        onClick={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
+      >
+        <List>
+          {navItems.map((item) => (
+            <ListItem
+              component={Link}
+              to={item.path}
+              sx={{
+                color: isActive(item.path) ? "primary.main" : "GrayText",
+                fontWeight: isActive(item.path) ? "bold" : "normal",
+              }}
+              key={item.label}
+              onClick={() => console.log(`${item.label} clicado`)}
+            >
+              <ListItemText primary={item.label} />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    ),
+    [location] // Apenas re-renderiza quando a localização muda
   );
 
   // Adicionando o efeito de rolagem para alterar o estado da barra de navegação
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 100;
-      setScrolled(isScrolled);
+      const scrollY = scrollRef.current.scrollY || window.scrollY;
+      setScrolled(scrollY > 100);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const onScroll = () => {
+      requestAnimationFrame(handleScroll);
+    };
+
+    scrollRef.current.addEventListener("scroll", onScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      scrollRef.current.removeEventListener("scroll", onScroll);
     };
   }, []);
 
@@ -84,8 +92,9 @@ const Navbar = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "#fff",
+          backgroundColor: scrolled ? "#fff" : "#f5f5f5",
           transition: "all 0.3s ease",
+          boxShadow: scrolled ? "0px 4px 20px rgba(0, 0, 0, 0.1)" : "none",
         }}
       >
         <Toolbar>
@@ -97,7 +106,7 @@ const Navbar = () => {
               sx={{
                 transition: "all 0.3s ease",
                 "&:hover": { transform: "scale(1.1)" },
-                width: { xs: "70px", sm: scrolled ? "90px" : "100px", md: scrolled ? "100px" : "120px" },
+                width: { xs: scrolled ? "60px" : "80px", sm: scrolled ? "90px" : "100px", md: scrolled ? "100px" : "120px" },
                 height: "auto",
                 display: "block",
                 margin: "10px",
@@ -134,7 +143,13 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        aria-label="navigation menu"
+        aria-expanded={drawerOpen}
+      >
         {drawerContent}
       </Drawer>
     </>
