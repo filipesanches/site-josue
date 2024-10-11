@@ -8,15 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-
-const navItems = [
-  { label: "Home", path: "/" },
-  { label: "About Us", path: "/about" },
-  { label: "Services", path: "/services" },
-  { label: "Projects", path: "/projects" },
-  { label: "Subcontractors", path: "/subcontractors" },
-  { label: "Contact Us", path: "/contact" },
-];
+import { navItems } from '../data/data_itens_nav';
 
 const GridGrow = ({ children }: {children: React.ReactNode}) => {
   return <Grid size="grow" sx={{ mb: { xs: "10px" } }}>{children}</Grid>;

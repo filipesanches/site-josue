@@ -11,15 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Logo from "../assets/logo-OK.png";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-
-const navItems = [
-  { label: "Home", path: "/" },
-  { label: "About Us", path: "/about" },
-  { label: "Services", path: "/services" },
-  { label: "Projects", path: "/projects" },
-  { label: "Subcontractors", path: "/subcontractors" },
-  { label: "Contact Us", path: "/contact" },
-];
+import { navItems } from '../data/data_itens_nav';
 
 const Navbar = () => {
   const location = useLocation();
