@@ -60,9 +60,9 @@ const ContactForm = () => {
 
     try {
       // Primeiro, obtemos o token da rota /get-token
-      // const endpointToken =
-      //   'https://backend-josue-production.up.railway.app/get-token'; // endpoint para o backend
-      const endpointToken = 'http://localhost:5000/get-token'; // Alterando a URL de teste para o local
+      const endpointToken =
+        'https://backend-josue-production.up.railway.app/get-token'; // endpoint para o backend
+      // const endpointToken = 'http://localhost:5000/get-token'; // Alterando a URL de teste para o local
 
       const tokenResponse = await fetch(endpointToken, {
         method: 'GET',
@@ -76,9 +76,9 @@ const ContactForm = () => {
       const tokenData = await tokenResponse.json();
       const token = tokenData.token;
 
-      // const endpoint =
-      //   'https://backend-josue-production.up.railway.app/send-elite'; // endpoint para o backend
-      const endpoint = 'http://localhost:5000/send-elite'; // Alterando a URL de teste para o local
+      const endpoint =
+        'https://backend-josue-production.up.railway.app/send-elite'; // endpoint para o backend
+      // const endpoint = 'http://localhost:5000/send-elite'; // Alterando a URL de teste para o local
 
       const formResponse = await fetch(endpoint, {
         method: 'POST',
