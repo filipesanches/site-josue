@@ -1,14 +1,14 @@
-import { Box, Typography } from '@mui/material';
-import Pagination from '../Pagination';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
-import CallIcon from '@mui/icons-material/Call';
 import SendIcon from '@mui/icons-material/Send';
-import EmailIcon from '@mui/icons-material/Email';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import BoxContent from '../BoxContent';
-import IframeForm from '../IframeForm';
+import ContactForm from '../ContactForm';
+import Pagination from '../Pagination';
 
 const CardContact = ({
   title,
@@ -117,11 +117,15 @@ const Contact = () => {
           text="info@elitecontracting-llc.com"
         />
       </BoxContent>
-      <Box sx={{ padding: '50px', width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <IframeForm 
-          height="1500px"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdtqWGxFC8xbOrlEM-ovQJlFoP1jhzvvf_EoFAhWCeCvd1Nqw/viewform?usp=sf_link"
-        />
+      <Box
+        sx={{
+          padding: '50px',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <ContactForm />
       </Box>
     </>
   );
